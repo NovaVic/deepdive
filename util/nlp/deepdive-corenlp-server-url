@@ -29,4 +29,4 @@ corenlp_properties=$(echo '
 }')
 
 # print CoreNLP server's endpoint URL
-echo "http://localhost:$CORENLP_PORT/?properties= $(jq -r '@uri' <<<"$corenlp_properties")"
+echo "http://prevert:$CORENLP_PORT/?properties= $(jq -r '@uri' <<<"$corenlp_properties")"
