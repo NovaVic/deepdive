@@ -44,7 +44,7 @@ if ! [[ "${DEEPDIVE_SHELL:-}" -ef "$0" ]]; then
     #  there's no such thing yet, so here's American imperialism: en_US.UTF-8
     #  See: https://sourceware.org/glibc/wiki/Proposals/C.UTF-8)
     unset LANGUAGE LANG LC_COLLATE LC_MESSAGES LC_MONETARY LC_NUMERIC LC_TIME
-    export LC_ALL=fr_FR.UTF-8
+    export LC_ALL=en_US.UTF-8
 
     DEEPDIVE_BUNDLED_PREFIX="$DEEPDIVE_HOME"/lib/bundled/.all
 
