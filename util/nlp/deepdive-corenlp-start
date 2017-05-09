@@ -75,6 +75,7 @@ if $is_elected; then
         $launch_with nohup java ${CORENLP_JAVAOPTS} -cp "$CORENLP_HOME/*" \
             edu.stanford.nlp.pipeline.StanfordCoreNLPServer \
             --port $CORENLP_PORT --timeout $CORENLP_TIMEOUT \
+	    -serverProperties "../local/lib/stanford-corenlp/corenlp/myprops.props" \
             </dev/null >"$CORENLP_LOG_OUT" 2>"$CORENLP_LOG_ERR" &
         echo $! >"$pid_file"
     fi
