@@ -52,6 +52,9 @@ for columnSpec; do
                 # sentence level attributes
                 index)
                     jqExprs+=("$(printf '(.%s | tojson)' "$nlpTag")") ;;
+                # original sentence attribute
+                sentenceOriginal)
+                    jqExprs+=("$(printf '(.%s | tojson)' "$nlpTag")") ;;
                 # token level attributes
                 # e.g., index|word|originalText|characterOffsetBegin|characterOffsetEnd|before|after|lemma|pos|ner)
                 tokens.*)
