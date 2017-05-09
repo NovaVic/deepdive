@@ -13,3 +13,11 @@ bash <(curl -fsSL git.io/getdeepdive)
 Read the [DeepDive developer's guide](doc/developer.md#readme) to learn more about this source tree and how to contribute.
 
 Licensed under [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.txt).
+
+# Update
+
+* en_EN.utf8 -> fr_FR.utf8
+* corenlp version 3.6 -> 3.7
+* original sentence added into sentence table
+* properties file for French models
+* 
