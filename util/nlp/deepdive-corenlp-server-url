@@ -22,6 +22,10 @@ corenlp_properties=$(echo '
 { "outputFormat"        : "json"
 , "annotators"          : "'"$(IFS=,; echo "${annotators[*]}")"'"
 , "tokenize.whitespace" : "false"
+, "parse.model"		: "edu/stanford/nlp/models/lexparser/frenchFactored.ser.gz"
+, "pos.model"		: "edu/stanford/nlp/models/pos-tagger/french/french.tagger"
+, "tokenize.language"	: "fr"
+, "depparse.model"	: "edu/stanford/nlp/models/parser/nndep/UD_French.gz"
 }')
 
 # print CoreNLP server's endpoint URL
