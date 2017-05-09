@@ -61,10 +61,10 @@ for columnSpec; do
                     attr=${nlpTag#tokens.}
                     jqExprs+=("$(printf '([.tokens[].%s] | tojson)' "$attr")") ;;
                 # sentence dependency representation
-                collapsed-dependencies.*|\
-                collapsed-ccprocessed-dependencies.*|\
-                basic-dependencies.*)
-                    attr=${nlpTag#*-dependencies.}
+                enhancedDependencies.*|\
+                enhancedPlusPlusDependencies.*|\
+                basicDependencies.*)
+                    attr=${nlpTag#*Dependencies.}
                     dependencyFieldName=${nlpTag%%.*}
                     usingDependenciesFields+=("$dependencyFieldName")
                     jqExprs+=("$(printf '([$%s[].%s] | tojson)' "$(@jqVar "$dependencyFieldName")" "$attr")") ;;
