@@ -6,6 +6,10 @@
 import psycopg2, psycopg2.extras, ujson
 import sys, subprocess, os, re
 
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8')
+
 # get arguments from command-line
 def usage(*msg):
     err = subprocess.call(["usage", sys.argv[0]] + list(msg))

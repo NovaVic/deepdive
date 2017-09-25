@@ -14,6 +14,7 @@ set -euo pipefail
         ner
         lemma
         depparse
+	regexner
     "}
 
 # CoreNLP properties
@@ -22,6 +23,8 @@ corenlp_properties=$(echo '
 { "outputFormat"        : "json"
 , "annotators"          : "'"$(IFS=,; echo "${annotators[*]}")"'"
 , "tokenize.whitespace" : "false"
+, "regexner.ignorecase": "true"
+, "includeText":	"true"
 }')
 # , "tokenize.language"   : "en"
 # , "parse.model"         : "edu/stanford/nlp/models/lexparser/frenchFactored.ser.gz"
@@ -31,4 +34,4 @@ corenlp_properties=$(echo '
 
 
 # print CoreNLP server's endpoint URL
-echo "http://prevert:$CORENLP_PORT/?properties= $(jq -r '@uri' <<<"$corenlp_properties")"
+echo "http://prevert.limsi.fr:$CORENLP_PORT/?properties=$(jq -r '@uri' <<<"$corenlp_properties")"
